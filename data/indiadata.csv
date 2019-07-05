@@ -1,0 +1,7 @@
+Crop,FIPS,Region,Area,Variant,NumStages,StageNum-1,StageName-1,StageStart-1,StageEnd-1,StageNum-2,StageName-2,StageStart-2,StageEnd-2
+Arhar/Tur,IN02,Andhra Pradesh,0.35,Earlykharif,2,1,Sowing,June,June,2,Harvest,November,December
+Paddy,IN02,Andhra Pradesh,0.35,kharif,2,1,Sowing,June,June,2,Harvest,November,December
+Wheat,IN02,Andhra Pradesh,0.35,rabi,2,1,Sowing,June,June,2,Harvest,November,December
+Rice,IN02,Andhra Pradesh,0.35,onseason,2,1,Sowing,June,June,2,Harvest,November,December
+Maize,IN02,Andhra Pradesh,0.35,offseason,2,1,Sowing,June,June,2,Harvest,November,December
+sugarcane,IN02,Andhra Pradesh,0.35,rabi,2,1,Sowing,June,June,2,Harvest,November,December
