@@ -1,6 +1,5 @@
-import { User, Products } from "./models";
+import { User, Products, Importer, DirWatcher } from "./models";
 import * as config from "./config/config.json";
-import { Importer, DirWatcher } from "./models";
 
 console.log(config.appName);
 var user = new User();

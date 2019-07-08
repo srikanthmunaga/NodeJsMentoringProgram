@@ -26,15 +26,25 @@ class Importer {
   listenForFilesChanged = () => {
     this.eventEmitter.on("fileChange", data => {
       Object.keys(data).map(file => {
-        this.import(file)
-          .then(csv => {
-            this.logCsvFileData({ file, action: data[file], csv });
-          })
-          .catch(error => {
-            this.logCsvFileData({ file, action: data[file], csv: "[]" });
-          });
+        if (this.async) {
+          this.import(file)
+            .then(csv => {
+              this.logCsvFileData({ file, action: data[file], csv });
+            })
+            .catch(error => {
+              this.logCsvFileData({ file, action: data[file], csv: "[]" });
+            });
+        } else {
+          let csv;
+          try {
+            csv = this.importSync(file);
+          } catch (err) {
+            csv = "[]";
+          }
+          this.logCsvFileData({ file, action: data[file], csv });
+        }
       });
     });
   };
 }
-module.exports = Importer;
+export default Importer;

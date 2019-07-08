@@ -29,7 +29,7 @@ class DirWatcher extends EventEmitter {
     clearInterval(this.timerInterval);
   };
   checkDirectoryForFiles = filePath => {
-    var files = fs.readdirSync(filePath);
+    let files = fs.readdirSync(filePath);
     if (files.length) {
       const fileStatsTemp1 = [];
       files.forEach(file => {
@@ -56,4 +56,5 @@ class DirWatcher extends EventEmitter {
     }
   };
 }
-module.exports = DirWatcher;
+
+export default DirWatcher;
