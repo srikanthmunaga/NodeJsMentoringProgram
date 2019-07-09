@@ -9,9 +9,6 @@ class Importer {
   import = path => {
     return new Promise((resolve, reject) => {
       fs.readFile(path, "utf8", (err, data) => {
-        if (err) {
-          throw err;
-        }
         resolve(data);
       });
     });

@@ -41,7 +41,7 @@ class DirWatcher extends EventEmitter {
       });
       Promise.all(fileStatsTemp1).then(files => {
         let changedFiles = {};
-        files.map(file => {
+        [...new Set([...files, ...Object.keys(this.fileStats)])].map(file => {
           changedFiles = {
             ...changedFiles,
             ...this.checkIndividualFileStatus(file)
