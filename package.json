@@ -28,6 +28,10 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
-    "papaparse": "^5.0.0"
+    "csvtojson": "^2.0.10",
+    "minimist": "^1.2.0",
+    "papaparse": "^5.0.0",
+    "request": "^2.88.0",
+    "through2": "^3.0.1"
   }
 }
