@@ -23,12 +23,5 @@ const bundlerConstants = {
   bundleFileName: "bundle.css",
   url: "https://epa.ms/nodejs18-hw3-css"
 };
-module.exports = {
-  infoMessages,
-  fileExtensions,
-  errorMessages,
-  bundlerConstants,
-  FILE_ADDED,
-  FILE_MODIFIED,
-  FILE_DELETED
-};
+
+export { FILE_ADDED, FILE_DELETED, FILE_MODIFIED, infoMessages, fileExtensions, errorMessages, bundlerConstants }

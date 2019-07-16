@@ -1,7 +1,7 @@
 const minimist = require("minimist");
-const { infoMessages } = require("./../config/constants");
-const { checkInputValidity } = require("./validateInput");
-const { actions } = require("./actions");
+import { infoMessages } from './../config/constants';
+import { checkInputValidity } from './validateInput';
+import { actions } from './actions.js';
 const args = process.argv.slice(2);
 if (checkInputValidity(args)) {
   var argv = minimist(args);

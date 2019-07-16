@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { infoMessages, errorMessages } = require("./../config/constants");
+import { infoMessages, errorMessages } from './../config/constants';
 
 const checkInputValidity = args => {
   if (!args.length) {
@@ -21,7 +21,5 @@ const checkFilePathValidity = path => {
     throw new Error(errorMessages.wrongFilePath);
   }
 };
-module.exports = {
-  checkFilePathValidity,
-  checkInputValidity
-};
+
+export { checkFilePathValidity, checkInputValidity }

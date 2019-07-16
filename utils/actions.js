@@ -1,10 +1,10 @@
-const csvtojson = require("csvtojson");
-const fs = require("fs");
-const path = require("path");
-const request = require("request");
-const through2 = require("through2");
-const { fileExtensions, bundlerConstants } = require("./../config/constants");
-const { checkFilePathValidity } = require("./validateInput");
+import request from 'request';
+import through2 from 'through2';
+import path from 'path';
+import fs from 'fs';
+import csvtojson from 'csvtojson';
+import { fileExtensions, bundlerConstants } from '../config/constants'
+import { checkFilePathValidity } from './validateInput';
 
 const actions = {
   reverse: () => {
@@ -86,7 +86,7 @@ const actions = {
         .on("close", () => {
           console.log(
             `\nThe css files has been concated and merged into ${
-              bundlerConstants.bundleFileName
+            bundlerConstants.bundleFileName
             } file.`
           );
         });
@@ -94,6 +94,4 @@ const actions = {
   }
 };
 
-module.exports = {
-  actions
-};
+export { actions }
