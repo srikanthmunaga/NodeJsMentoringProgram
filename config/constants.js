@@ -24,15 +24,4 @@ const bundlerConstants = {
   url: "https://epa.ms/nodejs18-hw3-css"
 };
 
-const UriConstants = "../data/index.html";
-
-export {
-  FILE_ADDED,
-  FILE_DELETED,
-  FILE_MODIFIED,
-  infoMessages,
-  fileExtensions,
-  errorMessages,
-  bundlerConstants,
-  UriConstants
-};
+export { FILE_ADDED, FILE_DELETED, FILE_MODIFIED, infoMessages, fileExtensions, errorMessages, bundlerConstants }
