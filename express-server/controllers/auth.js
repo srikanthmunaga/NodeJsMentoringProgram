@@ -3,7 +3,7 @@ import passport from "passport";
 import config from "../config/authConfig.json";
 
 import { NOTFOUND, ErrorMessages } from "../../config/constants";
-import { AuthError, errorResponse, successResponse } from "../helpers";
+import { failedAuth, errorResponse, successResponse } from "../helpers";
 
 export const auth = (req, res) => {
   const { email, password } = req.body;
@@ -43,7 +43,10 @@ export const auth = (req, res) => {
 export const passportAuth = social => (req, res) => {
   passport.authenticate(social, (err, user) => {
     if (err) {
-      throw AuthError.failedAuth(social, err);
+      var error = failedAuth(social, err);
+      res.send({
+        message: error
+      });
     }
 
     res.json(
