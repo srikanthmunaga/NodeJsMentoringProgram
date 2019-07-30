@@ -1,0 +1,39 @@
+{
+  "jwtSecret": "jwtsecret",
+  "userCreds": {
+    "email": "saeccse527@gmail.com",
+    "password": "sreekanth27"
+  },
+  "users": [
+    {
+      "username": "srikanth munaga",
+      "email": "saeccse527@gmail.com",
+      "password": "sreekanth27"
+    },
+    {
+      "username": "srikanth munaga",
+      "email": "saeccse527@gmail.com",
+      "password": "sreekanth27"
+    }
+  ],
+  "sessionConfig": {
+    "secret": "sessionSecret",
+    "saveUninitialized": false,
+    "resave": false
+  },
+  "facebookConfig": {
+    "clientID": "428378017761592",
+    "clientSecret": "1734650cda4b57311d9af13d79ba93c9",
+    "callbackURL": "http://localhost:3000/auth/facebook/callback"
+  },
+  "googleConfig": {
+    "clientID": "270671760598-pi756lpn18s7d53rk3su5539rpkj3und.apps.googleusercontent.com",
+    "clientSecret": "041bKiVX8ubZphz4hT6oxhhR",
+    "callbackURL": "http://127.0.0.1:3000/auth/google/callback"
+  },
+  "githubConfig": {
+    "clientID": "a8b10522dd9b82bd430c",
+    "clientSecret": "94e9cc7e33c9060edc8846c816100fdb4f9def57",
+    "callbackURL": "http://localhost:3000/auth/github/callback"
+  }
+}
