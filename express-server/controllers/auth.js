@@ -43,7 +43,7 @@ export const auth = (req, res) => {
 export const passportAuth = social => (req, res) => {
   passport.authenticate(social, (err, user) => {
     if (err) {
-      var error = failedAuth(social, err);
+      let error = failedAuth(social, err);
       res.send({
         message: error
       });
