@@ -40,16 +40,6 @@ export const useStrategies = () => {
     )
   );
 
-  // passport.use(
-  //   "twitter",
-  //   new TwitterStrategy(
-  //     config.twitterConfig,
-  //     (token, updatedToken, profile, done) => {
-  //       return done(undefined, profile);
-  //     }
-  //   )
-  // );cls
-
   passport.use(
     "google",
     new GoogleStrategy(
