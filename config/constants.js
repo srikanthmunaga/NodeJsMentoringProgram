@@ -1,6 +1,22 @@
 const FILE_ADDED = "FILE_ADDED";
 const FILE_MODIFIED = "FILE_MODIFIED";
 const FILE_DELETED = "FILE_DELETED";
+const NOTFOUND = "404";
+const ErrorMessages = {
+  NOPRODUCT: "There is no product with such id",
+  NOPRODUCTS: "There is no products to show",
+  NOREVIEWS: "There is no reviews for selected products",
+  NOUSERS: "There is no users to show",
+  NOTFOUND: "Not found",
+  NOUSER: "User with such email isn't register",
+  INCORRECTPASSWORD: "Password isn't correct",
+  NOTOKEN: "There is no token",
+  NOTVERIFIEDTOKEN: "The token is not verified",
+  FAILEDAUTH: "Authorization is failed",
+  FAILDEDGOOGLEAUTH: "Google+ user is not authorized",
+  FAILEDLOCALAUTH: "User is not authorized",
+  WRONGCREDENTIALS: "Wrong credentials"
+};
 const infoMessages = {
   wrongInput: "You have given a wrong input.",
   wrongOption:
@@ -34,5 +50,7 @@ export {
   fileExtensions,
   errorMessages,
   bundlerConstants,
-  UriConstants
+  UriConstants,
+  NOTFOUND,
+  ErrorMessages
 };
