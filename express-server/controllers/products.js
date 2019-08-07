@@ -1,29 +1,47 @@
-import productsData from "./../../data/product.json";
+import { ErrorMessages } from "../../config/constants";
+import { db } from "../database/database";
 
 const getProduct = (req, res) => {
-  const id = req.params.product_id;
-  let product = productsData.data.filter(item => {
-    return item.id == id;
-  });
-  res.send(product.length ? product : []);
+  db.products
+    .findByPk(req.params.product_id)
+    .then(product => {
+      if (!product) {
+        res.send(ErrorMessages.NOPRODUCT);
+      }
+      res.send(product);
+    })
+    .catch(error => console.log("Error: ", error));
 };
 
 const getProducts = (req, res) => {
-  res.send(productsData);
+  db.products
+    .findAll()
+    .then(products => res.send(products))
+    .catch(error => res.send(ErrorMessages.NOPRODUCTS));
 };
 
 const createProduct = (req, res) => {
-  const product = req.body;
-  productsData.data.push(product);
-  res.send(product);
+  const { title, price, id, reviews } = req.body;
+  db.products
+    .create({ title, price, id, reviews })
+    .then(product => res.json(product))
+    .catch(error => console.log("Error:", error));
 };
 
 const getReviews = (req, res) => {
-  const id = req.params.product_id;
-  let product = productsData.data.filter(item => {
-    return item.id == id;
-  });
-  res.send(product.length ? product[0].reviews : []);
+  db.products
+    .findByPk(req.params.product_id)
+    .then(product => {
+      if (!product) {
+        res.send(ErrorMessages.NOPRODUCT);
+      }
+      if (!product["reviews"]) {
+        res.send(ErrorMessages.NOREVIEWS);
+      }
+
+      res.json(product["reviews"]);
+    })
+    .catch(error => console.log("Error: ", error));
 };
 
 export { getProduct, getProducts, getReviews, createProduct };

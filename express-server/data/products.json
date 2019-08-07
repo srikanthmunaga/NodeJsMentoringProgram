@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Supreme T-shirt",
+    "price": 99.99,
+    "reviews": ["Good Product", "Bad Product"],
+    "createdAt": "07-08-2018",
+    "updatedAt": "07-08-2018"
+  },
+  {
+    "id": 2,
+    "title": "Excellent T-shirt",
+    "price": 99.99,
+    "reviews": ["Good Product", "Bad Product"],
+    "createdAt": "07-08-2018",
+    "updatedAt": "07-08-2018"
+  },
+  {
+    "id": 3,
+    "title": "Good T-shirt",
+    "price": 99.99,
+    "reviews": ["Good Product", "Bad Product"],
+    "createdAt": "07-08-2018",
+    "updatedAt": "07-08-2018"
+  },
+  {
+    "id": 4,
+    "title": "Bad T-shirt",
+    "price": 99.99,
+    "reviews": ["Good Product", "Bad Product"],
+    "createdAt": "07-08-2018",
+    "updatedAt": "07-08-2018"
+  }
+]
