@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "firstname": "Srikanth",
+    "lastname": "Munaga",
+    "role": "Mentee",
+    "createdAt": "07-08-2018",
+    "updatedAt": "07-08-2018"
+  },
+  {
+    "id": 2,
+    "firstname": "Maryna",
+    "lastname": "Kavetskaya",
+    "role": "Mentor",
+    "createdAt": "07-08-2018",
+    "updatedAt": "07-08-2018"
+  }
+]
