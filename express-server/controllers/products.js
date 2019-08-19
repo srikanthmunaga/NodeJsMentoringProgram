@@ -1,6 +1,6 @@
 import { ErrorMessages } from "../../config/constants";
 import { db } from "../database/database";
-
+import { Product } from "../mongomodels/product";
 const getProduct = (req, res) => {
   db.products
     .findByPk(req.params.product_id)
@@ -44,4 +44,86 @@ const getReviews = (req, res) => {
     .catch(error => console.log("Error: ", error));
 };
 
-export { getProduct, getProducts, getReviews, createProduct };
+const getMongoProducts = (req, res) => {
+  Product.find({}, (error, products) => {
+    if (error) {
+      console.error("Error", error);
+    }
+    res.send(products);
+  });
+};
+
+const createMongoProduct = (req, res) => {
+  const { id, title, price, reviews } = req.body;
+
+  Product.create({ id, title, price, reviews }, (error, product) => {
+    if (error) {
+      console.error("Error", error);
+    }
+
+    res.send(product);
+  });
+};
+
+const getMongoProduct = (req, res) => {
+  const { product_id } = req.params;
+
+  Product.findOne({ id: product_id }, (error, product) => {
+    if (error) {
+      console.error("Error", error);
+    }
+
+    if (!product) {
+      res.send(ErrorMessages.NOPRODUCT);
+      return;
+    }
+
+    res.send(product);
+  });
+};
+
+const getMongoReviews = (req, res) => {
+  const { product_id } = req.params;
+
+  Product.findOne({ id: product_id }, (error, product) => {
+    if (error) {
+      console.error("Error", error);
+    }
+
+    if (!product) {
+      res.send(ErrorMessages.NOPRODUCT);
+      return;
+    }
+
+    if (!product["reviews"]) {
+      res.send(ErrorMessages.NOREVIEWS);
+      return;
+    }
+
+    res.send(product["reviews"]);
+  });
+};
+
+const deleteMongoProduct = (req, res) => {
+  const { product_id } = req.params;
+
+  Product.findOneAndDelete({ id: product_id }, (error, product) => {
+    if (error) {
+      console.error("Error", error);
+    }
+
+    res.send(product);
+  });
+};
+
+export {
+  getProduct,
+  getProducts,
+  getReviews,
+  createProduct,
+  getMongoProduct,
+  getMongoProducts,
+  getMongoReviews,
+  createMongoProduct,
+  deleteMongoProduct
+};
