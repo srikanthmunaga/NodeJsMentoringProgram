@@ -13,7 +13,6 @@ export const successResponse = ({ email, username, token }) => {
 };
 
 export const errorResponse = ({ code, message, extendedMessage }) => {
-  console.log(code, message, extendedMessage);
   return {
     code: code,
     message: message,

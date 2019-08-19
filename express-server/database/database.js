@@ -12,7 +12,7 @@ const {
   database
 } = dbConfig.development;
 const url = `${dialect}://${username}:${password}@${host}:${port}/${database}`;
-console.log(url);
+
 const sequelize = new Sequelize(url);
 
 export const db = {

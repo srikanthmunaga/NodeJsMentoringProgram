@@ -20,7 +20,6 @@ export const useStrategies = () => {
         passReqToCallback: true
       },
       (req, email, password, done) => {
-        console.log("cress" + config.userCreds + req);
         const { email: userEmail, password: userPassword } = config.userCreds;
         if (email !== userEmail || password !== userPassword) {
           done(ErrorMessages.WRONGCREDENTIALS);

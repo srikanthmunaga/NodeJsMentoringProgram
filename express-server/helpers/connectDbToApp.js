@@ -5,7 +5,6 @@ import { DB, DbMessages } from "../constants/DbConstants";
 
 const args = process.argv.slice(2);
 const argv = minimist(args);
-console.log("Arguments", argv);
 
 export const connectDbToApp = (app, appPort) => {
   const selectedDb = argv.db;

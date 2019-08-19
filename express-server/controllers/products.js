@@ -45,12 +45,10 @@ const getReviews = (req, res) => {
 };
 
 const getMongoProducts = (req, res) => {
-  console.log("Inside mongoProducts");
   Product.find({}, (error, products) => {
     if (error) {
       console.error("Error", error);
     }
-    console.log("PRoducts", products);
     res.send(products);
   });
 };
