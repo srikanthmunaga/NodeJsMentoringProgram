@@ -4,10 +4,16 @@ import {
   getProduct,
   getProducts,
   getReviews,
-  createProduct
+  createProduct,
+  getMongoProduct,
+  getMongoProducts,
+  getMongoReviews,
+  createMongoProduct,
+  deleteMongoProduct
 } from "../controllers/products";
-
+import * as cities from "../controllers/cities";
 import { getUsers } from "../controllers/users";
+import * as users from "../controllers/users";
 import { verifyJWT } from "../middlewares/verifyJWT";
 import { useStrategies } from "../config/strategies";
 import { auth, passportAuth } from "../controllers/auth";
@@ -45,5 +51,35 @@ router
   .get(passport.authenticate("google", { scope: ["email", "profile"] }));
 
 router.route("/auth/google/callback").get(passportAuth("google"));
+router.route("/mongo/api/random").get(cities.getRandomCity);
+
+router
+  .route("/mongo/api/cities")
+  .get(cities.getAllCities)
+  .post(cities.createCity);
+
+router
+  .route("/mongo/api/cities/:city_id")
+  .put(cities.updateCity)
+  .delete(cities.deleteCity);
+
+router
+  .route("/mongo/api/users")
+  .get(users.getMongoUsers)
+  .post(users.createMongoUser);
+
+router.route("/mongo/api/users/:user_id").delete(users.deleteMongoUser);
+
+router
+  .route("/mongo/api/products")
+  .get(getMongoProducts)
+  .post(createMongoProduct);
+
+router
+  .route("/mongo/api/products/:product_id")
+  .get(getMongoProduct)
+  .delete(deleteMongoProduct);
+
+router.route("/mongo/api/products/:product_id/reviews").get(getMongoReviews);
 
 export { router };

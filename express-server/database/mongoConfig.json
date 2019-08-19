@@ -1,0 +1,6 @@
+{
+  "mongodburi": "mongodb://127.0.0.1:27017/nodejsmentoring",
+  "options": {
+    "useNewUrlParser": true
+  }
+}
